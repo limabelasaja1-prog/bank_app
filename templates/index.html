@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Rekening Bank Aktif</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏦 DATA BANK AKTIF ATAU TIDAK AKTIF DI WEB RAJABOTAK</h1>
+            <p>Informasi Bank Yang sedang digunakan atau tidak digunakan </p>
+        </header>
+
+        <div class="form-section">
+            <h2>Tambah Rekening Baru</h2>
+            <form id="formRekening">
+                <div class="form-group">
+                    <label for="nama_rekening">Nama Rekening *</label>
+                    <input type="text" id="nama_rekening" name="nama_rekening" required placeholder="Contoh: Rekening Operasional">
+                </div>
+
+                <div class="form-group">
+                    <label for="no_rekening">Nomor Rekening *</label>
+                    <input type="text" id="no_rekening" name="no_rekening" required placeholder="Contoh: 1234567890">
+                </div>
+
+                <div class="form-group">
+                    <label for="jenis_bank">Jenis Bank *</label>
+                    <select id="jenis_bank" name="jenis_bank" required>
+                        <option value="">-- Pilih Bank --</option>
+                        <option value="BRI">BRI</option>
+                        <option value="BCA">BCA</option>
+			<option value="BNI">BNI</option>
+                        <option value="MANDIRI">MANDIRI</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status Bank *</label>
+                    <select id="status" name="status" required>
+                        <option value="aktif">✓ Bank Aktif</option>
+                        <option value="tidak_aktif">✗ Bank Tidak Aktif</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="keterangan">Keterangan</label>
+                    <textarea id="keterangan" name="keterangan" rows="3" placeholder="Catatan atau keterangan tambahan..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Simpan Rekening</button>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h2>Daftar Rekening</h2>
+            <div id="messageBox" class="message-box"></div>
+            <div class="table-wrapper">
+                <table id="tableRekening">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Rekening</th>
+                            <th>Nomor Rekening</th>
+                            <th>Jenis Bank</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr class="empty-state">
+                            <td colspan="7">Belum ada data rekening. Tambahkan rekening baru untuk memulai.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalEdit" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Rekening</h2>
+            <form id="formEdit">
+                <input type="hidden" id="edit_id">
+                <div class="form-group">
+                    <label for="edit_nama_rekening">Nama Rekening *</label>
+                    <input type="text" id="edit_nama_rekening" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_no_rekening">Nomor Rekening *</label>
+                    <input type="text" id="edit_no_rekening" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_jenis_bank">Jenis Bank *</label>
+                    <select id="edit_jenis_bank" required>
+                        <option value="BRI">BRI</option>
+                        <option value="BCA">BCA</option>
+                        <option value="Mandiri">Mandiri</option>
+                        <option value="CIMB">CIMB</option>
+                        <option value="OVO">OVO</option>
+                        <option value="DANA">DANA</option>
+                        <option value="GCash">GCash</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit_status">Status Bank *</label>
+                    <select id="edit_status" required>
+                        <option value="aktif">✓ Bank Aktif</option>
+                        <option value="tidak_aktif">✗ Bank Tidak Aktif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit_keterangan">Keterangan</label>
+                    <textarea id="edit_keterangan" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Perbarui Rekening</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

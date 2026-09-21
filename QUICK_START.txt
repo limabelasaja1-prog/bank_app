@@ -1,0 +1,88 @@
+╔═══════════════════════════════════════════════════════════════╗
+║    🏦 APLIKASI MANAJEMEN DATA REKENING BANK - QUICK START    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+⚡ 3 LANGKAH CEPAT MEMULAI:
+
+1️⃣  INSTALL DEPENDENCIES
+    ──────────────────────────────────────────
+    Buka Command Prompt/Terminal dan ketik:
+    
+    pip install -r requirements.txt
+
+2️⃣  JALANKAN APLIKASI
+    ──────────────────────────────────────────
+    Masih di folder yang sama, ketik:
+    
+    python bank_app.py
+    
+    Tunggu sampai muncul:
+    🏦 Server berjalan di http://localhost:5000
+
+3️⃣  AKSES APLIKASI
+    ──────────────────────────────────────────
+    Buka browser dan pergi ke:
+    
+    http://localhost:5000
+
+    Done! Aplikasi siap digunakan! 🎉
+
+
+📝 FITUR UTAMA:
+──────────────────────────────────────────
+✓ Tambah rekening bank
+✓ Edit data rekening  
+✓ Hapus rekening
+✓ Melihat semua rekening dalam tabel
+✓ Status Bank (Aktif/Tidak Aktif)
+✓ Visual Badge untuk identifikasi status
+✓ Database lokal (tidak perlu internet)
+✓ Export/Import data ke CSV
+
+
+📂 FILE YANG DIBUAT:
+──────────────────────────────────────────
+├── bank_app.py              (Program utama)
+├── requirements.txt         (Dependencies)
+├── README.md               (Dokumentasi lengkap)
+├── rekening_bank.db        (Database, otomatis dibuat)
+├── templates/
+│   └── index.html
+└── static/
+    ├── css/style.css
+    └── js/script.js
+
+
+⚙️  BERHENTI APLIKASI:
+──────────────────────────────────────────
+Tekan CTRL + C di Command Prompt/Terminal
+
+
+📊 DATA YANG DISIMPAN:
+──────────────────────────────────────────
+- Nama Rekening
+- Nomor Rekening
+- Jenis Bank (BRI, BCA, Mandiri, dll)
+- Keterangan/Catatan
+
+
+🔒 KEAMANAN:
+──────────────────────────────────────────
+✓ Database disimpan di komputer lokal
+✓ Tidak ada data yang terkirim ke internet
+✓ Nomor rekening tidak boleh duplikat
+
+
+💡 TIPS:
+──────────────────────────────────────────
+1. Backup file "rekening_bank.db" secara berkala
+2. Jalankan aplikasi kapan saja dengan "python bank_app.py"
+3. Database akan tetap ada sampai Anda menghapusnya
+
+
+🆘 BANTUAN:
+──────────────────────────────────────────
+Jika ada masalah, baca file README.md
+
+
+Selamat menggunakan! 🚀

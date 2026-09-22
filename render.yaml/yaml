@@ -1,0 +1,6 @@
+services:
+   - type: web
+     name: bank-app
+     env: python
+     startCommand: gunicorn bank_app:app
+     buildCommand: pip install -r requirements.txt
